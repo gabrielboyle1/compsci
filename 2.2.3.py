@@ -1,4 +1,4 @@
-name = input("What is the name?").strip()
+name = input("What is the name? \n").strip( )
 
 
 if name:
