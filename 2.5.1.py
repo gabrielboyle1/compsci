@@ -11,9 +11,16 @@ async def countdownfrom100():
     global num  # Use global variable
     num = closest
     while num > 0:
-        print(num)
-        num -= count
-        await asyncio.sleep(0.5)  # Async-friendly sleep
+        if num % 13 == 0: 
+            num -= count
+            print("Unlucky number! Skipping...")
+        else:
+            print(num)
+            num -= count
+            await asyncio.sleep(0.5)  # Async-friendly sleep
+        if num == 20:
+            exit(
+                "You have reached 20, the program will now close. Goodbye!")
 
 async def count_up():
     global num
