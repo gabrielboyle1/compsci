@@ -1,4 +1,5 @@
 {
     "github.copilot.preferredAccount": "gabriel.boyle1",
-    "git.autofetch": "all"
+    "git.autofetch": "all",
+    "python.analysis.typeCheckingMode": "standard"
 }
