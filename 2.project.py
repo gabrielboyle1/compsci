@@ -39,7 +39,7 @@ question4.answer = ["True"]
 question4.responce = "0"
 
 question5 = question()
-question5.question = "How many bones are in the adult skull ?"
+question5.question = "How many bones are in the adult skull?"
 question5.answer = ["22"]
 question5.responce = "0"
 
@@ -75,7 +75,7 @@ randint1 = (randint(1, 100))
 randint2 = randint(1, 100)
 question11 = question()
 question11.question = f"What is {randint1} + {randint2}?"
-question11.answer = str([randint1 + randint2]) # type: ignore
+question11.answer = str([randint1 + randint2]) ## type: ignore
 question11.responce = "0"
 
 question12 = question()
@@ -85,17 +85,17 @@ question12.responce = "0"
                                               
 
 questions = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, question11, question12]
-totalScore = 0  # Start at 0
-correctAnswers = 0  # Counter for correct answers
+totalScore = 0  ## Start at 0
+correctAnswers = 0  ## Counter for correct answers
 
 while True:
     print("Welcome to the quiz! You may, at any time, enter Restart to restart the quiz. There are 11 questions. Good luck!")   
     for i in range(len(questions)):  
         print(questions[i].question)
         responce = input("Answer: ")
-        questions[i].responce = responce  # Store response
+        questions[i].responce = responce  ## Store response
     
-        if "range:" in questions[i].answer[0]:  # Check if it's a range-based question
+        if "range:" in questions[i].answer[0]:  ## Check if it's a range-based question
             minVal, maxVal = map(float, questions[i].answer[0].split(":")[1].split("-"))
             if minVal <= float(responce) <= maxVal:
                 print(f"{formatting.OKGREEN}{formatting.BOLD}Correct!{formatting.ENDC}")
@@ -105,7 +105,7 @@ while True:
         elif responce in questions[i].answer:
             print(f"{formatting.OKGREEN}{formatting.BOLD}Correct!{formatting.ENDC}")
             playsound("X:\\My Drive\\Grade 9 - Semester 2\\Period 3 - Comp Sci\\Unit 2\\correct.wav")
-            correctAnswers += 1  # Increase correct count
+            correctAnswers += 1  ## Increase correct count
         elif responce == "Restart":
             print("Restarting quiz...")
             break
@@ -130,9 +130,9 @@ while True:
             correctStrippedAnswer = questions[i].answer[0].strip()
             print(f"{formatting.FAIL}{formatting.BOLD}Incorrect!{formatting.ENDC} The answer was {correctStrippedAnswer}.")
             playsound("X:\\My Drive\\Grade 9 - Semester 2\\Period 3 - Comp Sci\\Unit 2\\incorrect.wav")
-        # Score is based on correct answers so far
+        ## Score is based on correct answers so far
         totalScore = (correctAnswers / (i + 1)) * 100  
-        totalScoreRounded = round(totalScore, 2)  # Round for display
+        totalScoreRounded = round(totalScore, 2)  ## Round for display
 
         print(f"Your score is {totalScoreRounded}%")
 
